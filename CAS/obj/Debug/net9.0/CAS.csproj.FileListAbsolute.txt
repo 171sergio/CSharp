@@ -1,0 +1,14 @@
+C:\Users\Sergio\Desktop\TPOO\CAS\bin\Debug\net9.0\CAS.exe
+C:\Users\Sergio\Desktop\TPOO\CAS\bin\Debug\net9.0\CAS.deps.json
+C:\Users\Sergio\Desktop\TPOO\CAS\bin\Debug\net9.0\CAS.runtimeconfig.json
+C:\Users\Sergio\Desktop\TPOO\CAS\bin\Debug\net9.0\CAS.dll
+C:\Users\Sergio\Desktop\TPOO\CAS\bin\Debug\net9.0\CAS.pdb
+C:\Users\Sergio\Desktop\TPOO\CAS\obj\Debug\net9.0\CAS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sergio\Desktop\TPOO\CAS\obj\Debug\net9.0\CAS.AssemblyInfoInputs.cache
+C:\Users\Sergio\Desktop\TPOO\CAS\obj\Debug\net9.0\CAS.AssemblyInfo.cs
+C:\Users\Sergio\Desktop\TPOO\CAS\obj\Debug\net9.0\CAS.csproj.CoreCompileInputs.cache
+C:\Users\Sergio\Desktop\TPOO\CAS\obj\Debug\net9.0\CAS.dll
+C:\Users\Sergio\Desktop\TPOO\CAS\obj\Debug\net9.0\refint\CAS.dll
+C:\Users\Sergio\Desktop\TPOO\CAS\obj\Debug\net9.0\CAS.pdb
+C:\Users\Sergio\Desktop\TPOO\CAS\obj\Debug\net9.0\CAS.genruntimeconfig.cache
+C:\Users\Sergio\Desktop\TPOO\CAS\obj\Debug\net9.0\ref\CAS.dll
