@@ -1,0 +1,29 @@
+/home/a2023952390/Área de Trabalho/MonitordeCriptoMoedas/Cripto/bin/Debug/net8.0/Cripto
+/home/a2023952390/Área de Trabalho/MonitordeCriptoMoedas/Cripto/bin/Debug/net8.0/Cripto.deps.json
+/home/a2023952390/Área de Trabalho/MonitordeCriptoMoedas/Cripto/bin/Debug/net8.0/Cripto.runtimeconfig.json
+/home/a2023952390/Área de Trabalho/MonitordeCriptoMoedas/Cripto/bin/Debug/net8.0/Cripto.dll
+/home/a2023952390/Área de Trabalho/MonitordeCriptoMoedas/Cripto/bin/Debug/net8.0/Cripto.pdb
+/home/a2023952390/Área de Trabalho/MonitordeCriptoMoedas/Cripto/obj/Debug/net8.0/Cripto.GeneratedMSBuildEditorConfig.editorconfig
+/home/a2023952390/Área de Trabalho/MonitordeCriptoMoedas/Cripto/obj/Debug/net8.0/Cripto.AssemblyInfoInputs.cache
+/home/a2023952390/Área de Trabalho/MonitordeCriptoMoedas/Cripto/obj/Debug/net8.0/Cripto.AssemblyInfo.cs
+/home/a2023952390/Área de Trabalho/MonitordeCriptoMoedas/Cripto/obj/Debug/net8.0/Cripto.csproj.CoreCompileInputs.cache
+/home/a2023952390/Área de Trabalho/MonitordeCriptoMoedas/Cripto/obj/Debug/net8.0/Cripto.dll
+/home/a2023952390/Área de Trabalho/MonitordeCriptoMoedas/Cripto/obj/Debug/net8.0/refint/Cripto.dll
+/home/a2023952390/Área de Trabalho/MonitordeCriptoMoedas/Cripto/obj/Debug/net8.0/Cripto.pdb
+/home/a2023952390/Área de Trabalho/MonitordeCriptoMoedas/Cripto/obj/Debug/net8.0/Cripto.genruntimeconfig.cache
+/home/a2023952390/Área de Trabalho/MonitordeCriptoMoedas/Cripto/obj/Debug/net8.0/ref/Cripto.dll
+C:\Users\Sergio\Documents\GitHub\CSharp\C#\MonitordeCriptoMoedas\Cripto\bin\Debug\net8.0\Cripto.exe
+C:\Users\Sergio\Documents\GitHub\CSharp\C#\MonitordeCriptoMoedas\Cripto\bin\Debug\net8.0\Cripto.deps.json
+C:\Users\Sergio\Documents\GitHub\CSharp\C#\MonitordeCriptoMoedas\Cripto\bin\Debug\net8.0\Cripto.runtimeconfig.json
+C:\Users\Sergio\Documents\GitHub\CSharp\C#\MonitordeCriptoMoedas\Cripto\bin\Debug\net8.0\Cripto.dll
+C:\Users\Sergio\Documents\GitHub\CSharp\C#\MonitordeCriptoMoedas\Cripto\bin\Debug\net8.0\Cripto.pdb
+C:\Users\Sergio\Documents\GitHub\CSharp\C#\MonitordeCriptoMoedas\Cripto\obj\Debug\net8.0\Cripto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sergio\Documents\GitHub\CSharp\C#\MonitordeCriptoMoedas\Cripto\obj\Debug\net8.0\Cripto.AssemblyInfoInputs.cache
+C:\Users\Sergio\Documents\GitHub\CSharp\C#\MonitordeCriptoMoedas\Cripto\obj\Debug\net8.0\Cripto.AssemblyInfo.cs
+C:\Users\Sergio\Documents\GitHub\CSharp\C#\MonitordeCriptoMoedas\Cripto\obj\Debug\net8.0\Cripto.csproj.CoreCompileInputs.cache
+C:\Users\Sergio\Documents\GitHub\CSharp\C#\MonitordeCriptoMoedas\Cripto\obj\Debug\net8.0\Cripto.sourcelink.json
+C:\Users\Sergio\Documents\GitHub\CSharp\C#\MonitordeCriptoMoedas\Cripto\obj\Debug\net8.0\Cripto.dll
+C:\Users\Sergio\Documents\GitHub\CSharp\C#\MonitordeCriptoMoedas\Cripto\obj\Debug\net8.0\refint\Cripto.dll
+C:\Users\Sergio\Documents\GitHub\CSharp\C#\MonitordeCriptoMoedas\Cripto\obj\Debug\net8.0\Cripto.pdb
+C:\Users\Sergio\Documents\GitHub\CSharp\C#\MonitordeCriptoMoedas\Cripto\obj\Debug\net8.0\Cripto.genruntimeconfig.cache
+C:\Users\Sergio\Documents\GitHub\CSharp\C#\MonitordeCriptoMoedas\Cripto\obj\Debug\net8.0\ref\Cripto.dll

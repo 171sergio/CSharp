@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cripto", "Cripto\Cripto.csproj", "{226B140D-8F25-2963-4F40-4FD62C19A0FE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{226B140D-8F25-2963-4F40-4FD62C19A0FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{226B140D-8F25-2963-4F40-4FD62C19A0FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{226B140D-8F25-2963-4F40-4FD62C19A0FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{226B140D-8F25-2963-4F40-4FD62C19A0FE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E0FC8B39-EE6E-469F-B11F-EBC6F45BC2F1}
+	EndGlobalSection
+EndGlobal
