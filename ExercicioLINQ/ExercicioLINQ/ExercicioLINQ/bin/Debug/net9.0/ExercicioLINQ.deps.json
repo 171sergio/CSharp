@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "ExercicioLINQ/1.0.0": {
+        "dependencies": {
+          "ConsoleDump": "0.7.0"
+        },
+        "runtime": {
+          "ExercicioLINQ.dll": {}
+        }
+      },
+      "ConsoleDump/0.7.0": {
+        "runtime": {
+          "lib/netstandard2.0/ConsoleDump.dll": {
+            "assemblyVersion": "0.7.0.0",
+            "fileVersion": "0.7.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ExercicioLINQ/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ConsoleDump/0.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eb/MsfvjsqBprLt4XikM8cw659D9vcqp+Bg0VCdsM8pXpdvuI03h41TeZFX/zyzG8e0INBvBCPW4APZc8pcavw==",
+      "path": "consoledump/0.7.0",
+      "hashPath": "consoledump.0.7.0.nupkg.sha512"
+    }
+  }
+}
