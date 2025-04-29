@@ -1,0 +1,29 @@
+C:\Users\Lucas Alves\OneDrive\UFMG\Disciplinas\2025\TAPOO\Restaurante\restaurante\bin\Debug\net9.0\restaurante.exe
+C:\Users\Lucas Alves\OneDrive\UFMG\Disciplinas\2025\TAPOO\Restaurante\restaurante\bin\Debug\net9.0\restaurante.deps.json
+C:\Users\Lucas Alves\OneDrive\UFMG\Disciplinas\2025\TAPOO\Restaurante\restaurante\bin\Debug\net9.0\restaurante.runtimeconfig.json
+C:\Users\Lucas Alves\OneDrive\UFMG\Disciplinas\2025\TAPOO\Restaurante\restaurante\bin\Debug\net9.0\restaurante.dll
+C:\Users\Lucas Alves\OneDrive\UFMG\Disciplinas\2025\TAPOO\Restaurante\restaurante\bin\Debug\net9.0\restaurante.pdb
+C:\Users\Lucas Alves\OneDrive\UFMG\Disciplinas\2025\TAPOO\Restaurante\restaurante\obj\Debug\net9.0\restaurante.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lucas Alves\OneDrive\UFMG\Disciplinas\2025\TAPOO\Restaurante\restaurante\obj\Debug\net9.0\restaurante.AssemblyInfoInputs.cache
+C:\Users\Lucas Alves\OneDrive\UFMG\Disciplinas\2025\TAPOO\Restaurante\restaurante\obj\Debug\net9.0\restaurante.AssemblyInfo.cs
+C:\Users\Lucas Alves\OneDrive\UFMG\Disciplinas\2025\TAPOO\Restaurante\restaurante\obj\Debug\net9.0\restaurante.csproj.CoreCompileInputs.cache
+C:\Users\Lucas Alves\OneDrive\UFMG\Disciplinas\2025\TAPOO\Restaurante\restaurante\obj\Debug\net9.0\restaurante.dll
+C:\Users\Lucas Alves\OneDrive\UFMG\Disciplinas\2025\TAPOO\Restaurante\restaurante\obj\Debug\net9.0\refint\restaurante.dll
+C:\Users\Lucas Alves\OneDrive\UFMG\Disciplinas\2025\TAPOO\Restaurante\restaurante\obj\Debug\net9.0\restaurante.pdb
+C:\Users\Lucas Alves\OneDrive\UFMG\Disciplinas\2025\TAPOO\Restaurante\restaurante\obj\Debug\net9.0\restaurante.genruntimeconfig.cache
+C:\Users\Lucas Alves\OneDrive\UFMG\Disciplinas\2025\TAPOO\Restaurante\restaurante\obj\Debug\net9.0\ref\restaurante.dll
+C:\Users\Sergio\Desktop\TPOO\Restaurante\Restaurante\restaurante\bin\Debug\net9.0\restaurante.exe
+C:\Users\Sergio\Desktop\TPOO\Restaurante\Restaurante\restaurante\bin\Debug\net9.0\restaurante.deps.json
+C:\Users\Sergio\Desktop\TPOO\Restaurante\Restaurante\restaurante\bin\Debug\net9.0\restaurante.runtimeconfig.json
+C:\Users\Sergio\Desktop\TPOO\Restaurante\Restaurante\restaurante\bin\Debug\net9.0\restaurante.dll
+C:\Users\Sergio\Desktop\TPOO\Restaurante\Restaurante\restaurante\bin\Debug\net9.0\restaurante.pdb
+C:\Users\Sergio\Desktop\TPOO\Restaurante\Restaurante\restaurante\obj\Debug\net9.0\restaurante.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sergio\Desktop\TPOO\Restaurante\Restaurante\restaurante\obj\Debug\net9.0\restaurante.AssemblyInfoInputs.cache
+C:\Users\Sergio\Desktop\TPOO\Restaurante\Restaurante\restaurante\obj\Debug\net9.0\restaurante.AssemblyInfo.cs
+C:\Users\Sergio\Desktop\TPOO\Restaurante\Restaurante\restaurante\obj\Debug\net9.0\restaurante.csproj.CoreCompileInputs.cache
+C:\Users\Sergio\Desktop\TPOO\Restaurante\Restaurante\restaurante\obj\Debug\net9.0\restaurante.dll
+C:\Users\Sergio\Desktop\TPOO\Restaurante\Restaurante\restaurante\obj\Debug\net9.0\refint\restaurante.dll
+C:\Users\Sergio\Desktop\TPOO\Restaurante\Restaurante\restaurante\obj\Debug\net9.0\restaurante.pdb
+C:\Users\Sergio\Desktop\TPOO\Restaurante\Restaurante\restaurante\obj\Debug\net9.0\restaurante.genruntimeconfig.cache
+C:\Users\Sergio\Desktop\TPOO\Restaurante\Restaurante\restaurante\obj\Debug\net9.0\ref\restaurante.dll
+C:\Users\Sergio\Desktop\TPOO\Restaurante\Restaurante\restaurante\obj\Debug\net9.0\restaurante.sourcelink.json
