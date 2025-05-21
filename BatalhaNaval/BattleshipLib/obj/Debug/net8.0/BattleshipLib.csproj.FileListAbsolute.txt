@@ -1,0 +1,11 @@
+/home/a2023952390/Área de Trabalho/BatalhaNaval/BattleshipLib/bin/Debug/net8.0/BattleshipLib.deps.json
+/home/a2023952390/Área de Trabalho/BatalhaNaval/BattleshipLib/bin/Debug/net8.0/BattleshipLib.dll
+/home/a2023952390/Área de Trabalho/BatalhaNaval/BattleshipLib/bin/Debug/net8.0/BattleshipLib.pdb
+/home/a2023952390/Área de Trabalho/BatalhaNaval/BattleshipLib/obj/Debug/net8.0/BattleshipLib.GeneratedMSBuildEditorConfig.editorconfig
+/home/a2023952390/Área de Trabalho/BatalhaNaval/BattleshipLib/obj/Debug/net8.0/BattleshipLib.AssemblyInfoInputs.cache
+/home/a2023952390/Área de Trabalho/BatalhaNaval/BattleshipLib/obj/Debug/net8.0/BattleshipLib.AssemblyInfo.cs
+/home/a2023952390/Área de Trabalho/BatalhaNaval/BattleshipLib/obj/Debug/net8.0/BattleshipLib.csproj.CoreCompileInputs.cache
+/home/a2023952390/Área de Trabalho/BatalhaNaval/BattleshipLib/obj/Debug/net8.0/BattleshipLib.dll
+/home/a2023952390/Área de Trabalho/BatalhaNaval/BattleshipLib/obj/Debug/net8.0/refint/BattleshipLib.dll
+/home/a2023952390/Área de Trabalho/BatalhaNaval/BattleshipLib/obj/Debug/net8.0/BattleshipLib.pdb
+/home/a2023952390/Área de Trabalho/BatalhaNaval/BattleshipLib/obj/Debug/net8.0/ref/BattleshipLib.dll

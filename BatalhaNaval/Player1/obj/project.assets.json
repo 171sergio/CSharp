@@ -1,0 +1,94 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "BattleshipLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/BattleshipLib.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BattleshipLib.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BattleshipLib/1.0.0": {
+      "type": "project",
+      "path": "../BattleshipLib/BattleshipLib.csproj",
+      "msbuildProject": "../BattleshipLib/BattleshipLib.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "BattleshipLib >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "/home/a2023952390/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/home/a2023952390/Área de Trabalho/BatalhaNaval/Player1/Player1.csproj",
+      "projectName": "Player1",
+      "projectPath": "/home/a2023952390/Área de Trabalho/BatalhaNaval/Player1/Player1.csproj",
+      "packagesPath": "/home/a2023952390/.nuget/packages/",
+      "outputPath": "/home/a2023952390/Área de Trabalho/BatalhaNaval/Player1/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/home/a2023952390/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {
+            "/home/a2023952390/Área de Trabalho/BatalhaNaval/BattleshipLib/BattleshipLib.csproj": {
+              "projectPath": "/home/a2023952390/Área de Trabalho/BatalhaNaval/BattleshipLib/BattleshipLib.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/snap/dotnet-sdk/256/sdk/8.0.407/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
