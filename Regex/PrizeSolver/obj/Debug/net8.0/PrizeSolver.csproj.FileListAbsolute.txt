@@ -1,0 +1,15 @@
+/home/a2023952390/Área de Trabalho/Regex/PrizeSolver/bin/Debug/net8.0/prize.json
+/home/a2023952390/Área de Trabalho/Regex/PrizeSolver/bin/Debug/net8.0/PrizeSolver
+/home/a2023952390/Área de Trabalho/Regex/PrizeSolver/bin/Debug/net8.0/PrizeSolver.deps.json
+/home/a2023952390/Área de Trabalho/Regex/PrizeSolver/bin/Debug/net8.0/PrizeSolver.runtimeconfig.json
+/home/a2023952390/Área de Trabalho/Regex/PrizeSolver/bin/Debug/net8.0/PrizeSolver.dll
+/home/a2023952390/Área de Trabalho/Regex/PrizeSolver/bin/Debug/net8.0/PrizeSolver.pdb
+/home/a2023952390/Área de Trabalho/Regex/PrizeSolver/obj/Debug/net8.0/PrizeSolver.GeneratedMSBuildEditorConfig.editorconfig
+/home/a2023952390/Área de Trabalho/Regex/PrizeSolver/obj/Debug/net8.0/PrizeSolver.AssemblyInfoInputs.cache
+/home/a2023952390/Área de Trabalho/Regex/PrizeSolver/obj/Debug/net8.0/PrizeSolver.AssemblyInfo.cs
+/home/a2023952390/Área de Trabalho/Regex/PrizeSolver/obj/Debug/net8.0/PrizeSolver.csproj.CoreCompileInputs.cache
+/home/a2023952390/Área de Trabalho/Regex/PrizeSolver/obj/Debug/net8.0/PrizeSolver.dll
+/home/a2023952390/Área de Trabalho/Regex/PrizeSolver/obj/Debug/net8.0/refint/PrizeSolver.dll
+/home/a2023952390/Área de Trabalho/Regex/PrizeSolver/obj/Debug/net8.0/PrizeSolver.pdb
+/home/a2023952390/Área de Trabalho/Regex/PrizeSolver/obj/Debug/net8.0/PrizeSolver.genruntimeconfig.cache
+/home/a2023952390/Área de Trabalho/Regex/PrizeSolver/obj/Debug/net8.0/ref/PrizeSolver.dll
