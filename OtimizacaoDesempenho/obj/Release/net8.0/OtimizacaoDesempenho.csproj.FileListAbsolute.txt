@@ -1,0 +1,14 @@
+/home/a2023952390/Área de Trabalho/TPOO/OtimizacaoDesempenho/bin/Release/net8.0/OtimizacaoDesempenho
+/home/a2023952390/Área de Trabalho/TPOO/OtimizacaoDesempenho/bin/Release/net8.0/OtimizacaoDesempenho.deps.json
+/home/a2023952390/Área de Trabalho/TPOO/OtimizacaoDesempenho/bin/Release/net8.0/OtimizacaoDesempenho.runtimeconfig.json
+/home/a2023952390/Área de Trabalho/TPOO/OtimizacaoDesempenho/bin/Release/net8.0/OtimizacaoDesempenho.dll
+/home/a2023952390/Área de Trabalho/TPOO/OtimizacaoDesempenho/bin/Release/net8.0/OtimizacaoDesempenho.pdb
+/home/a2023952390/Área de Trabalho/TPOO/OtimizacaoDesempenho/obj/Release/net8.0/OtimizacaoDesempenho.GeneratedMSBuildEditorConfig.editorconfig
+/home/a2023952390/Área de Trabalho/TPOO/OtimizacaoDesempenho/obj/Release/net8.0/OtimizacaoDesempenho.AssemblyInfoInputs.cache
+/home/a2023952390/Área de Trabalho/TPOO/OtimizacaoDesempenho/obj/Release/net8.0/OtimizacaoDesempenho.AssemblyInfo.cs
+/home/a2023952390/Área de Trabalho/TPOO/OtimizacaoDesempenho/obj/Release/net8.0/OtimizacaoDesempenho.csproj.CoreCompileInputs.cache
+/home/a2023952390/Área de Trabalho/TPOO/OtimizacaoDesempenho/obj/Release/net8.0/OtimizacaoDesempenho.dll
+/home/a2023952390/Área de Trabalho/TPOO/OtimizacaoDesempenho/obj/Release/net8.0/refint/OtimizacaoDesempenho.dll
+/home/a2023952390/Área de Trabalho/TPOO/OtimizacaoDesempenho/obj/Release/net8.0/OtimizacaoDesempenho.pdb
+/home/a2023952390/Área de Trabalho/TPOO/OtimizacaoDesempenho/obj/Release/net8.0/OtimizacaoDesempenho.genruntimeconfig.cache
+/home/a2023952390/Área de Trabalho/TPOO/OtimizacaoDesempenho/obj/Release/net8.0/ref/OtimizacaoDesempenho.dll
