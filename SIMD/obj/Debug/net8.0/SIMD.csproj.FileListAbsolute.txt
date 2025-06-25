@@ -1,0 +1,14 @@
+/home/a2023952390/SIMD/bin/Debug/net8.0/SIMD
+/home/a2023952390/SIMD/bin/Debug/net8.0/SIMD.deps.json
+/home/a2023952390/SIMD/bin/Debug/net8.0/SIMD.runtimeconfig.json
+/home/a2023952390/SIMD/bin/Debug/net8.0/SIMD.dll
+/home/a2023952390/SIMD/bin/Debug/net8.0/SIMD.pdb
+/home/a2023952390/SIMD/obj/Debug/net8.0/SIMD.GeneratedMSBuildEditorConfig.editorconfig
+/home/a2023952390/SIMD/obj/Debug/net8.0/SIMD.AssemblyInfoInputs.cache
+/home/a2023952390/SIMD/obj/Debug/net8.0/SIMD.AssemblyInfo.cs
+/home/a2023952390/SIMD/obj/Debug/net8.0/SIMD.csproj.CoreCompileInputs.cache
+/home/a2023952390/SIMD/obj/Debug/net8.0/SIMD.dll
+/home/a2023952390/SIMD/obj/Debug/net8.0/refint/SIMD.dll
+/home/a2023952390/SIMD/obj/Debug/net8.0/SIMD.pdb
+/home/a2023952390/SIMD/obj/Debug/net8.0/SIMD.genruntimeconfig.cache
+/home/a2023952390/SIMD/obj/Debug/net8.0/ref/SIMD.dll
