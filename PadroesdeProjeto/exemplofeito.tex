@@ -1,0 +1,226 @@
+\documentclass[
+	12pt,
+	oneside,
+	a4paper,
+	english,
+	brazil,
+]{abntex2}
+
+% ---
+% Pacotes fundamentais 
+% ---
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage[brazilian,hyperpageref]{backref}
+\usepackage[alf]{abntex2cite}
+
+% ---
+% Configuração do Listings para C#
+% ---
+\lstset{
+  language=CSharp,
+  captionpos=b,
+  showspaces=false,
+  showtabs=false,
+  breaklines=true,
+  showstringspaces=false,
+  breakatwhitespace=true,
+  commentstyle=\color{green!60!black},
+  keywordstyle=\color{blue},
+  stringstyle=\color{red},
+  basicstyle=\ttfamily\small,
+  frame=tb,
+  tabsize=2,
+    literate=
+    *{á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+    {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+    {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+    {ã}{{\~a}}1 {õ}{{\~o}}1 {Ã}{{\~A}}1 {Õ}{{\~O}}1
+    {ç}{{\c c}}1 {Ç}{{\c C}}1
+    {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+}
+
+% ---
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% ---
+\titulo{Prática 9 Laboratório de TAPOO}
+\autor{Sergio Amaral de Souza}
+\local{Belo Horizonte, Brasil}
+\data{2024}
+\instituicao{%
+  Universidade Federal de Minas Gerais
+  \par
+  Colégio Técnico
+  \par
+  Curso Técnico em Desenvolvimento de Sistemas}
+
+\definecolor{linkblue}{RGB}{41,5,195}
+
+\makeatletter
+\hypersetup{
+	pdftitle={\@title},
+	pdfauthor={\@author},
+	pdfsubject={Relatório de Prática de Otimização},
+	colorlinks=true,
+	linkcolor=linkblue,
+	citecolor=linkblue,
+	filecolor=magenta,
+	urlcolor=linkblue,
+	bookmarksdepth=4
+}
+\makeatother
+
+\renewcommand{\thesection}{\arabic{section}}
+\setlength{\parindent}{1.3cm}
+\setlength{\parskip}{0pt}
+
+\makeindex
+
+\begin{document}
+\selectlanguage{brazil}
+\frenchspacing
+\imprimircapa
+\textual
+
+\section{Introdução}
+\begin{itemize}
+    \item Este laboratório aborda um problema de otimização de performance em um sistema de processamento de imagens em lote. A aplicação, que aplica um filtro de blur em centenas de imagens, sofria com alto consumo de memória e pausas frequentes do Garbage Collector (GC) devido a alocações excessivas.
+    \item O objetivo do projeto foi refatorar a implementação ineficiente, substituindo a alocação contínua de memória pelo uso de \texttt{ArrayPool<T>}, um mecanismo de pooling de arrays de alta performance do .NET.
+    \item A meta era demonstrar uma melhoria mensurável em tempo de execução, estabilidade e, principalmente, na redução da pressão sobre o GC, validando os resultados através de um benchmark comparativo entre a versão original e a otimizada.
+\end{itemize}
+
+\section{Desenvolvimento}
+
+A solução foi desenvolvida em etapas: análise da implementação original, refatoração com a estratégia de pooling e, por fim, a criação de um sistema de benchmark para uma comparação quantitativa.
+
+\subsection{Análise da Solução Trivial}
+\begin{itemize}
+    \item A versão original do processador de imagens alocava um novo array bidimensional para cada imagem a ser desfocada. O gargalo de performance residia no método \texttt{ApplyBlurFilter}, onde um novo array \texttt{blurred} era instanciado a cada chamada.
+    \item Em um loop que processa 500 imagens, isso resultava em 500 alocações de grandes objetos na memória (LOH - Large Object Heap), sobrecarregando o Garbage Collector e causando coletas de lixo frequentes e custosas.
+\end{itemize}
+
+\begin{lstlisting}[caption={Ponto crítico de alocação na versão trivial.}]
+private static PixelRGB[,] ApplyBlurFilter(PixelRGB[,] original)
+{
+    int height = original.GetLength(0);
+    int width = original.GetLength(1);
+    
+    // PROBLEMA: Nova alocação a cada chamada, sobrecarregando o GC!
+    var blurred = new PixelRGB[height, width];
+    
+    // ... Lógica de aplicação do filtro ...
+    
+    return blurred;
+}
+\end{lstlisting}
+
+\subsection{Estratégia de Otimização com ArrayPool<T>}
+\begin{itemize}
+    \item Para resolver o problema, a estratégia foi substituir as alocações contínuas pelo uso de \texttt{ArrayPool<PixelRGB>.Shared}. Esta classe estática mantém um "pool" de arrays que podem ser "alugados" para uso temporário e "devolvidos" quando não são mais necessários.
+    \item Isso evita o ciclo de criação e destruição de objetos, reduzindo drasticamente a pressão sobre o GC.
+    \item Como \texttt{ArrayPool<T>} não suporta arrays multidimensionais nativamente, foi necessário simular as imagens 2D (800x600) com arrays unidimensionais de tamanho 480.000 (\texttt{width * height}).
+\end{itemize}
+A lógica do filtro foi então adaptada para usar o array 1D, calculando o índice correspondente a \texttt{[y, x]} com a fórmula \texttt{y * IMAGE\_WIDTH + x}.
+
+\begin{lstlisting}[caption={Mapeamento de índice 2D para 1D no filtro otimizado.}]
+private static void ApplyBlurFilter(PixelRGB[] original, PixelRGB[] blurred)
+{
+    for (int y = 0; y < IMAGE_HEIGHT - 1; y++)
+    {
+        for (int x = 0; x < IMAGE_WIDTH - 1; x++)
+        {
+            int currentIndex = y * IMAGE_WIDTH + x;
+            // ... calcula os outros índices (direito, inferior, etc.)
+            blurred[currentIndex] = PixelRGB.Average(/*...*/);
+        }
+    }
+}
+\end{lstlisting}
+
+\subsection{Implementação Otimizada e Gerenciamento de Memória}
+\begin{itemize}
+    \item A versão otimizada gerencia o ciclo de vida dos arrays explicitamente. Dentro do loop, dois arrays são alugados do pool: um para a imagem original e outro para a imagem desfocada.
+    \item Um bloco \texttt{try-finally} é essencial para garantir que os arrays sejam devolvidos ao pool com o método \texttt{Return()}, mesmo que ocorra uma exceção. Isso evita vazamentos de memória (memory leaks), onde a memória alugada nunca é liberada.
+\end{itemize}
+
+\begin{lstlisting}[caption={Ciclo de aluguel e devolução de arrays com ArrayPool.}]
+var arrayPool = ArrayPool<PixelRGB>.Shared;
+var bufferSize = IMAGE_WIDTH * IMAGE_HEIGHT;
+
+for (int i = 0; i < TOTAL_IMAGES; i++)
+{
+    var originalImage = arrayPool.Rent(bufferSize);
+    var blurredImage = arrayPool.Rent(bufferSize);
+
+    try
+    {
+        // ... Lógica de processamento da imagem ...
+    }
+    finally
+    {
+        arrayPool.Return(originalImage);
+        arrayPool.Return(blurredImage);
+    }
+}
+\end{lstlisting}
+
+\subsection{Metodologia de Benchmark}
+\begin{itemize}
+    \item Para validar a otimização, um programa de benchmark foi criado para executar ambas as versões em sequência e coletar métricas de performance de forma padronizada.
+    \item O tempo de execução foi medido com a classe \texttt{System.Diagnostics.Stopwatch}.
+    \item As coletas de lixo e a memória alocada foram monitoradas com a classe \texttt{System.GC}, capturando os contadores de cada geração (Gen 0, 1 e 2) e a memória total antes e depois de cada execução.
+\end{itemize}
+
+\begin{lstlisting}[caption={Coleta de métricas de GC para análise.}]
+// Captura do estado inicial
+long initialMemory = GC.GetTotalMemory(true);
+var gen0Before = GC.CollectionCount(0);
+var gen1Before = GC.CollectionCount(1);
+var gen2Before = GC.CollectionCount(2);
+
+// ... Execução do processamento de imagens ...
+
+// Captura do estado final e cálculo da diferença
+long finalMemory = GC.GetTotalMemory(true);
+var gc0Count = GC.CollectionCount(0) - gen0Before;
+var gc1Count = GC.CollectionCount(1) - gen1Before;
+var gc2Count = GC.CollectionCount(2) - gen2Before;
+\end{lstlisting}
+
+\section{Resultados}
+
+A execução do benchmark forneceu uma comparação clara entre as duas abordagens. A imagem a seguir exibe a tabela de resultados gerada pelo programa, que resume as métricas de performance coletadas para cada versão.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=\linewidth]{ap.png}
+  \caption{Saída do terminal com a tabela de resultados do benchmark comparativo.}
+  \label{fig:resultados}
+\end{figure}
+
+A análise detalhada da tabela revela o seguinte:
+\begin{itemize}
+    \item \textbf{Tempo Total (ms):} A versão otimizada foi consistentemente mais rápida, com uma melhoria de aproximadamente \textbf{21\%}. Essa aceleração é um resultado direto da redução drástica do trabalho do Garbage Collector. Menos tempo gasto em coletas de lixo significa mais tempo de CPU disponível para o processamento real das imagens.
+    \item \textbf{Alocação de Memória (MB):} Esta métrica pode ser contraintuitiva. O valor maior na versão otimizada não indica um problema, mas sim o funcionamento do \texttt{ArrayPool}, que pré-aloca e retém memória para reutilização. \texttt{GC.GetTotalMemory()} mede a memória total em uso, que inclui esse pool. O verdadeiro ganho, que é a ausência de alocações \textit{constantes}, é melhor observado na próxima métrica.
+    \item \textbf{Coleções GC (Gen 0, 1 e 2):} Este é o resultado mais impactante. A versão trivial executou 250 coletas de lixo, enquanto a otimizada necessitou de apenas 2. Isso representa uma redução de \textbf{99.2\%} e prova o sucesso da otimização. Menos coletas significam uma execução mais estável, previsível e com menos pausas ("engasgos").
+\end{itemize}
+
+\clearpage
+\section{Conclusão}
+
+\begin{itemize}
+    \item \textbf{Resultados vs. Expectativas:} O experimento foi bem-sucedido e os resultados alcançaram os objetivos propostos. A aplicação da técnica de pooling com \texttt{ArrayPool<T>} demonstrou ser extremamente eficaz para o cenário de alocação repetitiva de grandes objetos, validando a teoria na prática.
+    \item \textbf{Dificuldades Encontradas:} A principal dificuldade não foi técnica, mas sim conceitual: a interpretação correta das métricas de memória. Foi necessário compreender que, em um cenário de pooling, um maior uso de memória reportado pelo GC ao final da execução é esperado e não indica um problema, mas sim a eficácia da estratégia de reuso.
+    \item \textbf{Aprendizado:} O principal aprendizado foi a confirmação prática da importância da gestão consciente da memória em aplicações .NET de alta performance. Reduzir a "pressão" sobre o Garbage Collector é uma das otimizações mais eficazes, resultando em ganhos expressivos de desempenho e estabilidade, muitas vezes sem alterar a lógica de negócio fundamental do algoritmo.
+    \item \textbf{Melhorias Futuras:} O projeto poderia ser estendido para explorar o uso de \texttt{Memory<T>} e \texttt{Span<T>}, que trabalham em conjunto com o \texttt{ArrayPool} para fornecer uma abstração ainda mais segura e eficiente sobre a memória, evitando cópias de dados desnecessárias.
+\end{itemize}
+
+\end{document}

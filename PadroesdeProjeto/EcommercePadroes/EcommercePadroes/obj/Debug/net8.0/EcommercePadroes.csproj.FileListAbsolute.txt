@@ -1,0 +1,14 @@
+/home/a2023952390/Área de Trabalho/PadroesdeProjeto/EcommercePadroes/EcommercePadroes/bin/Debug/net8.0/EcommercePadroes
+/home/a2023952390/Área de Trabalho/PadroesdeProjeto/EcommercePadroes/EcommercePadroes/bin/Debug/net8.0/EcommercePadroes.deps.json
+/home/a2023952390/Área de Trabalho/PadroesdeProjeto/EcommercePadroes/EcommercePadroes/bin/Debug/net8.0/EcommercePadroes.runtimeconfig.json
+/home/a2023952390/Área de Trabalho/PadroesdeProjeto/EcommercePadroes/EcommercePadroes/bin/Debug/net8.0/EcommercePadroes.dll
+/home/a2023952390/Área de Trabalho/PadroesdeProjeto/EcommercePadroes/EcommercePadroes/bin/Debug/net8.0/EcommercePadroes.pdb
+/home/a2023952390/Área de Trabalho/PadroesdeProjeto/EcommercePadroes/EcommercePadroes/obj/Debug/net8.0/EcommercePadroes.GeneratedMSBuildEditorConfig.editorconfig
+/home/a2023952390/Área de Trabalho/PadroesdeProjeto/EcommercePadroes/EcommercePadroes/obj/Debug/net8.0/EcommercePadroes.AssemblyInfoInputs.cache
+/home/a2023952390/Área de Trabalho/PadroesdeProjeto/EcommercePadroes/EcommercePadroes/obj/Debug/net8.0/EcommercePadroes.AssemblyInfo.cs
+/home/a2023952390/Área de Trabalho/PadroesdeProjeto/EcommercePadroes/EcommercePadroes/obj/Debug/net8.0/EcommercePadroes.csproj.CoreCompileInputs.cache
+/home/a2023952390/Área de Trabalho/PadroesdeProjeto/EcommercePadroes/EcommercePadroes/obj/Debug/net8.0/EcommercePadroes.dll
+/home/a2023952390/Área de Trabalho/PadroesdeProjeto/EcommercePadroes/EcommercePadroes/obj/Debug/net8.0/refint/EcommercePadroes.dll
+/home/a2023952390/Área de Trabalho/PadroesdeProjeto/EcommercePadroes/EcommercePadroes/obj/Debug/net8.0/EcommercePadroes.pdb
+/home/a2023952390/Área de Trabalho/PadroesdeProjeto/EcommercePadroes/EcommercePadroes/obj/Debug/net8.0/EcommercePadroes.genruntimeconfig.cache
+/home/a2023952390/Área de Trabalho/PadroesdeProjeto/EcommercePadroes/EcommercePadroes/obj/Debug/net8.0/ref/EcommercePadroes.dll

@@ -1,0 +1,204 @@
+\documentclass[
+    12pt,
+    oneside,
+    a4paper,
+    english,
+    brazil,
+]{abntex2}
+
+% Pacotes fundamentais
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage[brazilian,hyperpageref]{backref}
+\usepackage[alf]{abntex2cite}
+
+\lstset{
+  language=CSharp,
+  showspaces=false,
+  showtabs=false,
+  breaklines=true,
+  showstringspaces=false,
+  breakatwhitespace=true,
+  commentstyle=\color{green!60!black},
+  keywordstyle=\color{blue},
+  stringstyle=\color{red},
+  basicstyle=\ttfamily\small,
+  frame=tb,
+  tabsize=2
+}
+
+% Informações de dados para CAPA e FOLHA DE ROSTO
+\titulo{Sistema de E-commerce com Padrões de Projeto}
+\autor{Seu Nome}
+\local{Belo Horizonte, Brasil}
+\data{2024}
+\instituicao{
+  Universidade Federal de Minas Gerais
+  \par
+  Colégio Técnico
+  \par
+  Curso Técnico em Desenvolvimento de Sistemas}
+
+\definecolor{linkblue}{RGB}{41,5,195}
+
+\makeatletter
+\hypersetup{
+    pdftitle={\@title},
+    pdfauthor={\@author},
+    pdfsubject={Relatório de Prática de Padrões de Projeto},
+    colorlinks=true,
+    linkcolor=linkblue,
+    citecolor=linkblue,
+    filecolor=magenta,
+    urlcolor=linkblue,
+    bookmarksdepth=4
+}
+\makeatother
+
+\renewcommand{\thesection}{\arabic{section}}
+\setlength{\parindent}{1.3cm}
+\setlength{\parskip}{0pt}
+
+\makeindex
+
+\begin{document}
+\selectlanguage{brazil}
+\frenchspacing
+\imprimircapa
+\textual
+
+\section{Introdução}
+\begin{itemize}
+    \item Este relatório apresenta o desenvolvimento de um sistema de e-commerce simplificado em C\#, projetado para demonstrar a aplicação de cinco padrões de projeto: Singleton, Factory Method, Observer, Strategy e Decorator.
+    \item O sistema gerencia produtos de diferentes categorias, pedidos, métodos de pagamento e notificações, promovendo flexibilidade e extensibilidade.
+    \item O objetivo é evidenciar como padrões de projeto podem ser aplicados para resolver problemas comuns de arquitetura e design em sistemas reais.
+\end{itemize}
+
+\section{Desenvolvimento}
+O sistema foi estruturado em torno dos seguintes padrões:
+
+\subsection{Singleton: Gerenciador de Configurações}
+\begin{lstlisting}[caption={Singleton para configurações globais}]
+public sealed class GerenciadorConfiguracao {
+    private static GerenciadorConfiguracao _instancia;
+    private static readonly object _bloqueio = new object();
+    private GerenciadorConfiguracao() { }
+    public static GerenciadorConfiguracao Instancia {
+        get {
+            if (_instancia == null) {
+                lock (_bloqueio) {
+                    if (_instancia == null)
+                        _instancia = new GerenciadorConfiguracao();
+                }
+            }
+            return _instancia;
+        }
+    }
+    public string ConexaoBancoDados { get; set; } = "ConexaoPadrao";
+    public decimal TaxaImposto { get; set; } = 0.08m;
+}
+\end{lstlisting}
+
+\subsection{Factory Method: Criação de Produtos}
+\begin{lstlisting}[caption={Factory para produtos}]
+public abstract class FabricaProduto {
+    public abstract Produto CriarProduto(string nome, decimal preco);
+}
+public class FabricaEletronicos : FabricaProduto {
+    public override Produto CriarProduto(string nome, decimal preco) {
+        return new Eletronico { Nome = nome, Preco = preco };
+    }
+}
+// Implementações similares para Roupa e Livro
+\end{lstlisting}
+
+\subsection{Observer: Sistema de Notificações}
+\begin{lstlisting}[caption={Observer para notificações de pedido}]
+public interface IObservadorPedido {
+    void AoMudarStatusPedido(Pedido pedido, string novoStatus);
+}
+public class Pedido {
+    private List<IObservadorPedido> _observadores = new List<IObservadorPedido>();
+    private string _status;
+    public string Status {
+        get => _status;
+        set {
+            _status = value;
+            NotificarObservadores();
+        }
+    }
+    public void Inscrever(IObservadorPedido observador) {
+        _observadores.Add(observador);
+    }
+    private void NotificarObservadores() {
+        foreach (var observador in _observadores) {
+            observador.AoMudarStatusPedido(this, _status);
+        }
+    }
+}
+\end{lstlisting}
+
+\subsection{Strategy: Métodos de Pagamento}
+\begin{lstlisting}[caption={Strategy para métodos de pagamento}]
+public interface IEstrategiaPagamento {
+    bool ProcessarPagamento(decimal valor);
+    string ObterDetalhespagamento();
+}
+public class ContextoPagamento {
+    private IEstrategiaPagamento _estrategiaPagamento;
+    public void DefinirEstrategiaPagamento(IEstrategiaPagamento estrategia) {
+        _estrategiaPagamento = estrategia;
+    }
+    public bool ExecutarPagamento(decimal valor) {
+        return _estrategiaPagamento?.ProcessarPagamento(valor) ?? false;
+    }
+}
+\end{lstlisting}
+
+\subsection{Decorator: Funcionalidades Extras do Produto}
+\begin{lstlisting}[caption={Decorator para produtos}]
+public abstract class DecoradorProduto : Produto {
+    protected Produto _produto;
+    public DecoradorProduto(Produto produto) {
+        _produto = produto;
+    }
+    public override string ObterCategoria() => _produto.ObterCategoria();
+    public override decimal CalcularFrete() => _produto.CalcularFrete();
+}
+public class DecoradorGarantia : DecoradorProduto {
+    private int _mesesGarantia;
+    public DecoradorGarantia(Produto produto, int mesesGarantia) : base(produto) {
+        _mesesGarantia = mesesGarantia;
+        Nome = produto.Nome;
+        Preco = produto.Preco + (mesesGarantia * 10);
+    }
+    public override string ObterCategoria() => _produto.ObterCategoria() + " + Garantia";
+}
+\end{lstlisting}
+
+\section{Resultados}
+A seguir, apresentamos a execução do sistema, demonstrando a integração dos padrões e o funcionamento do e-commerce.\newline
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\linewidth]{resultado.png}
+  \caption{Saída do terminal com a execução do sistema de e-commerce.}
+  \label{fig:resultados}
+\end{figure}
+
+\section{Conclusão}
+\begin{itemize}
+    \item O sistema desenvolvido demonstra, de forma prática, a aplicação de cinco padrões de projeto fundamentais em um contexto real de e-commerce.
+    \item A utilização dos padrões Singleton, Factory Method, Observer, Strategy e Decorator proporcionou um código mais modular, flexível e de fácil manutenção.
+    \item O exercício evidenciou a importância de boas práticas de design para a escalabilidade e clareza de sistemas orientados a objetos.
+    \item Como melhoria futura, seria interessante adicionar testes automatizados e expandir o sistema para suportar mais tipos de produtos e integrações reais de pagamento.
+\end{itemize}
+
+\end{document} 
